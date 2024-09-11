@@ -24,7 +24,7 @@ int main()
 	char upperCase2;
 
 		for (int i = 33; i <= 126; i++) //Go to bottom for thought process
-		// Professor said I could get rid of the i >= 33, and it should still work. TEST LATER ---> it worked
+		// Professor said I could get rid of the i >= 33, and it should still work. TEST LATER --> it worked
 	{
 		upperCase = i;
 		upperCase2 = i;
