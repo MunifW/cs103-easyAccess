@@ -18,7 +18,34 @@ int main()
 	1. First, find out how to only get even and odd numbers
 	2. Then, make while loops that continously add the even numbers
 	3. Finally, make a while loop that subtracts the odd numbers from the even numbers*/
+
+	int even, odd, sum;
+
+	cout << "Please input an EVEN number: " << "\n";
 	
+	while (cin >> even)
+	{
+		even = even % 10; //Will give you an even number for any even number except for numbers 0 - 10.
+
+		cout << "Your even number is: " << even << "\n";
+
+		if (even == 1 || even == 3 || even == 5 || even == 7 || even == 9) //FIND A BETTER WAY TO CHECK FOR ODD NUMBERS
+		{
+			cout << "Not an even number! Try again." << "\n";
+		}
+		else 
+		{
+			sum = sum + even;
+		}
+	}
+
+	cout << "Your current sum is: " << sum << "\n";
+
+	/*An idea to think about... Would using 2k + 1 to make odd numbers be acceptable in this program?
+								Would using only 2k to make even numbers be acceptable in this program?
+
+		If we are using the % symbol to basically break off the users input into something even or odd, then we should be able to use this...*/
+
 	return 0;
 }
 
