@@ -14,7 +14,11 @@ using std::cout;
 
 int main()
 {
-	/* your answer goes here... */
+	/* make a program that intakes even numbers and then adds them up, then gets subtracted by odd numbers.
+	1. First, find out how to only get even and odd numbers
+	2. Then, make while loops that continously add the even numbers
+	3. Finally, make a while loop that subtracts the odd numbers from the even numbers*/
+	
 	return 0;
 }
 
