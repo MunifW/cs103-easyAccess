@@ -11,7 +11,7 @@ using std::cout;
 
 int main()
 {
-	/* your answer goes here... */
+	/*Make a program that outputs the exponent of an input from 2. Ex output: Your output was 2^n, n being the number that you need to find*/
 	return 0;
 }
 
