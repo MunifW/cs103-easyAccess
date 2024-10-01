@@ -50,7 +50,7 @@ int main()
 	ijjj
 	*/
 
-	for (int i = 0; i < n; i++) //Controls rows
+	for (int i = 0; i < n - 1; i++) //Controls rows
 	{
 		//cout << "*";
 
@@ -61,7 +61,7 @@ int main()
 			//cout << "*";
 			cout << "j";
 
-			if (i == 1)
+			if (i)
 			{
 				cout << "k";
 			}
