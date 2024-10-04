@@ -9,7 +9,15 @@ using std::cout;
 
 int main()
 {
-	/* your answer goes here... */
+	/* First figure out how to print out the smallest integer first. */
+
+	int x;
+
+	while (cin >> x)
+	{
+		cout << "Current x value: " << x << "\n";
+	}
+
 	return 0;
 }
 
