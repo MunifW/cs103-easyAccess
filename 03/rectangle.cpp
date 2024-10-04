@@ -50,28 +50,20 @@ int main()
 	ijjj
 	*/
 
-	for (int i = 0; i < n - 1; i++) //Controls rows
+	for (int i = 0; i < n; i++) //Controls rows
 	{
-		//cout << "*";
-
-		cout << "i";
-
 		for (int j = 0; j < m; j++) //Controls columns
 		{
-			//cout << "*";
-			cout << "j";
-
-			if (i)
+			if (i == 0 || i == n - 1 || j == 0 || j == m - 1)
 			{
-				cout << "k";
+				cout << "*";
 			}
 			else
 			{
-				//cout << " ";
+				cout << " ";
 			}
 
 		}
-
 		cout << "\n";
 	}
 
