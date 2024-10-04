@@ -1,6 +1,7 @@
 #include <iostream>
 using std::cin;
 using std::cout;
+using namespace std;
 
 /* TODO: read two integers n,m and draw (using some for loops) a
  * rectangle of '*' characters that is nxm.  E.g. if n = 3, m = 4
@@ -50,11 +51,14 @@ int main()
 	ijjj
 	*/
 
-	for (int i = 0; i < n; i++) //Controls rows
+	for (int i = 0; i < n - 1; i++) //Controls rows
 	{
 		for (int j = 0; j < m; j++) //Controls columns
 		{
-			if (i == 0 || i == n - 1 || j == 0 || j == m - 1)
+			//cout << "*";
+			cout << "j";
+
+			if (i)
 			{
 				cout << "*";
 			}
@@ -62,7 +66,6 @@ int main()
 			{
 				cout << " ";
 			}
-
 		}
 		cout << "\n";
 	}
