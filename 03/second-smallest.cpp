@@ -15,42 +15,37 @@ int main()
 {
 	/* First figure out how to print out the smallest integer first. */
 
-	int x, y, z;
+	/*Basic idea is that x and y will always be overwritten into z.*/
+
+	int x, y, z, count = 0; 
 
 #if 0
-	while (true)
+	cout << "Please input a value for x: " << "\n"; //X will be a static # that gets compared to
+	cin >> x;
+
+	cout << "Please input a value for y: " << "\n"; //Will always be changing
+
+	while (cin >> y)
 	{
-		cout << "Please input a value for x: " << "\n";
-		cin >> x;
 
-		cout << "Please input a value for y: " << "\n";
-		cin >> y;
-
-		//cout << "Current y value: " << y << "\n";
-
-		if (x < y)
+		if (x < y) //z will become x if x < y
 		{
 			z = x;
-
-			//cout << "Current z value (for x < y) " << z << "\n";
 		}
-		else if (y < x)
+		else if (y < z || z < x) //x will change its value so that the loop can keep going, and z will become y
 		{
+			x = y;
 			z = y;
-
-			//cout << "Current z value (for y < x) " << z << "\n";
 		}
 
-		if (!cin >> x || !cin >> y)
-		{
-			break;
-		}
+		//cout << "Current Z value: " << z << "\n";
 	}
+
+	cout << "Smallest Value: " << z << "\n";
 #endif
-	/*Basic idea is that x and y will always be overwritten into z. 
-	
-	Noticable problem right now is that previous inputs will be thrown away, which makes finding smallest int not possible
-		IDEA: Might have to use z in a conditional to compare with x and y... Maybe if (z < x || y)*/
+
+	bool checker = false; //This is a way to not have to update x, or basically not continously going into the first if statement.
+
 
 	cout << "Please input a value for x: " << "\n"; //X will be a static # that gets compared to
 	cin >> x;
@@ -59,25 +54,37 @@ int main()
 
 	while (cin >> y)
 	{
-		if (x < y) //z will become x if x < y
+		//cout << "Current x value pain: " << x << "\n";
+
+		if (x < y && checker == 0) //z will become x if x < y
 		{
+			checker = true;
 			z = x;
 
-			//cout << "Current z value (for x < y) " << z << "\n";
+			cout << "Do I go in here? " << "\n";
 		}
-		else if (y < x) //z will become y is y < x
+		else if (y < z || z < x) //x will change its value so that the loop can keep going, and z will become y
 		{
+			
+			//x = y;
+			x = z; //This is to swap the values of x and z, to get the second smallest.
 			z = y;
 
-			//cout << "Current z value (for y < x) " << z << "\n";
+			cout << "Balls" << "\n";
+			//cout << "Else if X: " << x << "\n";
 		}
 
-		//cout << "Current Z value: " << z << "\n";
+		cout << "Current Z value: " << z << "\n";
+		cout << "Current x value: " << x << "\n";
 	}
 
-	cout << "Smallest Value: " << z << "\n";
+	cout << "Second smallest value: " << x << "\n";
+
+//THE PROBLEM RIGHT NOW IS THAT DESCENDING ORDER DOES NOT WORK FOR SECOND SMALLEST!!!!!!!!!!!!!!!!!!!!!!
 
 	return 0;
 }
+
+// z < x works because z is 0 at first, so when you input numbers in descending order, the program will go into the else if statement. 
 
 // vim:foldlevel=2
