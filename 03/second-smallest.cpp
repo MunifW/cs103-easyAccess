@@ -46,7 +46,6 @@ int main()
 
 	bool checker = false; //This is a way to not have to update x, or basically not continously going into the first if statement.
 
-
 	cout << "Please input a value for x: " << "\n"; //X will be a static # that gets compared to
 	cin >> x;
 
@@ -65,22 +64,32 @@ int main()
 		}
 		else if (y < z || z < x) //x will change its value so that the loop can keep going, and z will become y
 		{
-			
-			//x = y;
-			x = z; //This is to swap the values of x and z, to get the second smallest.
-			z = y;
+		
+			if (y < x)
+			{
+				x = y;
+				//z = y;
+				//x = z;
+				y = x;
+
+				cout << "FUCKKKK" << "\n";
+			}
+
+			//x = z; //This is to swap the values of x and z, to get the second smallest.
+			z = y;	
 
 			cout << "Balls" << "\n";
-			//cout << "Else if X: " << x << "\n";
 		}
 
-		cout << "Current Z value: " << z << "\n";
 		cout << "Current x value: " << x << "\n";
+		cout << "Current Z value: " << z << "\n";
 	}
 
 	cout << "Second smallest value: " << x << "\n";
 
 //THE PROBLEM RIGHT NOW IS THAT DESCENDING ORDER DOES NOT WORK FOR SECOND SMALLEST!!!!!!!!!!!!!!!!!!!!!!
+  // Because z = 0 at first, x will become 0 within the if-else statement, and then the code will enter the first if statement because
+		// it thinks that x < y since x is now 0.
 
 	return 0;
 }
