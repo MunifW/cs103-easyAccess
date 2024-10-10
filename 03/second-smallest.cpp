@@ -17,8 +17,9 @@ int main()
 
 	/*Basic idea is that x and y will always be overwritten into z.*/
 
-	int x, y, z, count = 0; 
+	//int x, y, z, count = 0; 
 
+/* This code below only finds the smallest integer */
 #if 0
 	cout << "Please input a value for x: " << "\n"; //X will be a static # that gets compared to
 	cin >> x;
@@ -41,9 +42,13 @@ int main()
 		//cout << "Current Z value: " << z << "\n";
 	}
 
+// z < x works because z is 0 at first, so when you input numbers in descending order, the program will go into the else if statement.
+
 	cout << "Smallest Value: " << z << "\n";
 #endif
 
+/* FAILED VERSION */
+#if 0
 	bool checker = false; //This is a way to not have to update x, or basically not continously going into the first if statement.
 
 	cout << "Please input a value for x: " << "\n"; //X will be a static # that gets compared to
@@ -90,10 +95,49 @@ int main()
 //THE PROBLEM RIGHT NOW IS THAT DESCENDING ORDER DOES NOT WORK FOR SECOND SMALLEST!!!!!!!!!!!!!!!!!!!!!!
   // Because z = 0 at first, x will become 0 within the if-else statement, and then the code will enter the first if statement because
 		// it thinks that x < y since x is now 0.
+#endif
+
+/* THE ONE THAT WORKS IS DOWN BELOW:*/
+
+	int x; // Smallest integer
+    int y; // Dynamic Integer
+    int z; // Second smallest Integer
+
+    cout << "Please input two integers: " << "\n";
+    cin >> x >> z; /* Need to get input from both x and z to have starting values to be compared to. */
+
+    cout << "Please input more integers " << "\n";
+
+    while (cin >> y) // Y is the value that will always change and be the input from user.
+    {
+        if (x < y && z > y) // On the number line, this would be directly in the middle, between x and z.
+        {
+            z = y; 
+        }
+        else if (y < x) // On the number line, this would be on the far left.
+        {
+            z = x;
+            x = y;
+        }
+
+        //cout << "Value of x: " << x << "\n";
+        //cout << "Value of z: " << z << "\n";
+    }
+
+    cout << "Smallest Value: " << x << "\n";
+    cout << "Second smallest Value " << z << "\n";
+
+
+
+/*          y                   y                           y
+    <-------------|---------------------------------|----------------->  
+                  x                                 z
+
+
+    I used this number line to help me visualize the way numbers should be inputted. The conditionals reflect within this number line.
+*/
 
 	return 0;
-}
-
-// z < x works because z is 0 at first, so when you input numbers in descending order, the program will go into the else if statement. 
+} 
 
 // vim:foldlevel=2
