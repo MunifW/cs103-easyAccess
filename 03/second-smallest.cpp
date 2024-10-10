@@ -17,7 +17,7 @@ int main()
 
 	/*Basic idea is that x and y will always be overwritten into z.*/
 
-	//int x, y, z, count = 0; 
+	int x, y, z, count = 0; 
 
 /* This code below only finds the smallest integer */
 #if 0
@@ -60,28 +60,19 @@ int main()
 	{
 		//cout << "Current x value pain: " << x << "\n";
 
-		if (x < y && checker == 0) //z will become x if x < y
+		if (x < y) //z will become x if x < y
 		{
-			checker = true;
+			//checker = true;
 			z = x;
 
 			cout << "Do I go in here? " << "\n";
 		}
 		else if (y < z || z < x) //x will change its value so that the loop can keep going, and z will become y
-		{
-		
-			if (y < x)
-			{
-				x = y;
-				//z = y;
-				//x = z;
-				y = x;
-
-				cout << "FUCKKKK" << "\n";
-			}
-
+		{  // 10 9 8 7 6 5 4 3 2 1
+			z = y;
+			z = x; //z would be y basically
 			//x = z; //This is to swap the values of x and z, to get the second smallest.
-			z = y;	
+			//z = y;	
 
 			cout << "Balls" << "\n";
 		}
@@ -91,6 +82,7 @@ int main()
 	}
 
 	cout << "Second smallest value: " << x << "\n";
+
 
 //THE PROBLEM RIGHT NOW IS THAT DESCENDING ORDER DOES NOT WORK FOR SECOND SMALLEST!!!!!!!!!!!!!!!!!!!!!!
   // Because z = 0 at first, x will become 0 within the if-else statement, and then the code will enter the first if statement because
@@ -136,6 +128,35 @@ int main()
 
     I used this number line to help me visualize the way numbers should be inputted. The conditionals reflect within this number line.
 */
+
+#if 0
+while (cin >> y)
+	{
+		//cout << "Current x value pain: " << x << "\n";
+
+		if (x < y) //z will become x if x < y
+		{
+			//checker = true;
+			z = x;
+
+			cout << "Do I go in here? " << "\n";
+		}
+		else if (y < x) //x will change its value so that the loop can keep going, and z will become y
+		{  
+			z = x;
+			x = y;
+		}
+		else if (y < z)
+		{
+			z = y;
+		}
+
+		cout << "Current x value: " << x << "\n";
+		cout << "Current Z value: " << z << "\n";
+	}
+
+	cout << "Second smallest value: " << z << "\n";
+#endif
 
 	return 0;
 } 
