@@ -19,6 +19,7 @@ int main()
 
 	//int x, y, z; 
 
+/* This code below only finds the smallest integer */
 #if 0
 	cout << "Please input a value for x: " << "\n"; //X will be a static # that gets compared to
 	cin >> x;
@@ -40,6 +41,8 @@ int main()
 
 		//cout << "Current Z value: " << z << "\n";
 	}
+
+// z < x works because z is 0 at first, so when you input numbers in descending order, the program will go into the else if statement.
 
 	cout << "Smallest Value: " << z << "\n";
 #endif
@@ -165,8 +168,6 @@ while (cin >> y)
 
 
 	return 0;
-}
-
-// z < x works because z is 0 at first, so when you input numbers in descending order, the program will go into the else if statement. 
+} 
 
 // vim:foldlevel=2
