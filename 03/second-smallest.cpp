@@ -17,7 +17,7 @@ int main()
 
 	/*Basic idea is that x and y will always be overwritten into z.*/
 
-	int x, y, z, count = 0; 
+	//int x, y, z; 
 
 /* This code below only finds the smallest integer */
 #if 0
@@ -47,7 +47,7 @@ int main()
 	cout << "Smallest Value: " << z << "\n";
 #endif
 
-/* FAILED VERSION */
+
 #if 0
 	bool checker = false; //This is a way to not have to update x, or basically not continously going into the first if statement.
 
@@ -67,14 +67,13 @@ int main()
 
 			cout << "Do I go in here? " << "\n";
 		}
-		else if (y < z || z < x) //x will change its value so that the loop can keep going, and z will become y
-		{  // 10 9 8 7 6 5 4 3 2 1
-			z = y;
-			z = x; //z would be y basically
-			//x = z; //This is to swap the values of x and z, to get the second smallest.
-			//z = y;	
+		else if (y < z || y < x) //x will change its value so that the loop can keep going, and z will become y
+		{  
+			//x = y  
+			x = z; //This is to swap the values of x and z, to get the second smallest.
+			z = y;	
 
-			cout << "Balls" << "\n";
+			cout << "Else if" << "\n";
 		}
 
 		cout << "Current x value: " << x << "\n";
@@ -82,61 +81,25 @@ int main()
 	}
 
 	cout << "Second smallest value: " << x << "\n";
-
-
+#endif
+			// ^
+			// |
 //THE PROBLEM RIGHT NOW IS THAT DESCENDING ORDER DOES NOT WORK FOR SECOND SMALLEST!!!!!!!!!!!!!!!!!!!!!!
   // Because z = 0 at first, x will become 0 within the if-else statement, and then the code will enter the first if statement because
 		// it thinks that x < y since x is now 0.
-#endif
-
-/* THE ONE THAT WORKS IS DOWN BELOW:*/
-
-	int x; // Smallest integer
-    int y; // Dynamic Integer
-    int z; // Second smallest Integer
-
-    cout << "Please input two integers: " << "\n";
-    cin >> x >> z; /* Need to get input from both x and z to have starting values to be compared to. */
-
-    cout << "Please input more integers " << "\n";
-
-    while (cin >> y) // Y is the value that will always change and be the input from user.
-    {
-        if (x < y && z > y) // On the number line, this would be directly in the middle, between x and z.
-        {
-            z = y; 
-        }
-        else if (y < x) // On the number line, this would be on the far left.
-        {
-            z = x;
-            x = y;
-        }
-
-        //cout << "Value of x: " << x << "\n";
-        //cout << "Value of z: " << z << "\n";
-    }
-
-    cout << "Smallest Value: " << x << "\n";
-    cout << "Second smallest Value " << z << "\n";
-
-
-
-/*          y                   y                           y
-    <-------------|---------------------------------|----------------->  
-                  x                                 z
-
-
-    I used this number line to help me visualize the way numbers should be inputted. The conditionals reflect within this number line.
-*/
 
 #if 0
+cout << "Please input a value for x: " << "\n"; //X will be a static # that gets compared to
+	cin >> x;
+
+cout << "Please input a value for y: " << "\n"; //Will always be changing
+
 while (cin >> y)
 	{
 		//cout << "Current x value pain: " << x << "\n";
 
 		if (x < y) //z will become x if x < y
 		{
-			//checker = true;
 			z = x;
 
 			cout << "Do I go in here? " << "\n";
@@ -157,6 +120,52 @@ while (cin >> y)
 
 	cout << "Second smallest value: " << z << "\n";
 #endif
+
+/* THE ONE THAT WORKS!!!*/
+
+	int x; // Smallest integer
+    int y; // Dynamic Integer
+    int z; // Second smallest Integer
+
+    cout << "Please input two integers: " << "\n";
+    cin >> x >> z;
+    // now make sure that x is the smallest so far and z the second smallest so far
+
+    cout << "Please input more integers " << "\n";
+
+    while (cin >> y)
+    {
+        if (x < y && z > y) // Smallest Int < Dynamic Int and second-smallest < dynamic int
+        {
+            z = y; 
+
+           // cout << "Do I go in here?" << "\n"; 
+        }
+        else if (y < x) // New input < smallest
+        {
+            z = x;
+            x = y;
+
+            // cout << "Else-if ONE" << "\n";
+        }
+
+        //cout << "Value of x: " << x << "\n";
+        //cout << "Value of z: " << z << "\n";
+    }
+
+    cout << "Smallest Value: " << x << "\n";
+    cout << "Second smallest Value " << z << "\n";
+
+
+
+/*          y                   y                           y
+    <-------------|---------------------------------|----------------->  
+                  x                                 z
+
+
+    I used this number line to help me visualize the way numbers should be inputted. The conditionals reflect within this number line.
+*/
+
 
 	return 0;
 } 
