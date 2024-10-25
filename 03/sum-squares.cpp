@@ -13,6 +13,11 @@ using std::cout;
 int main()
 {
 	/* your answer goes here... */
+
+	/* I would have to make a while loop that reads from the user, and have a variable that equals that input times itself, which then will
+	 then be added to a sum
+	 
+	 for the bonus question, I would have to only accept numbers that are odd, so have an if statement with (n % 2 != 0) as the conditional*/ 
 	return 0;
 }
 
