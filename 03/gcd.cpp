@@ -9,7 +9,8 @@ using std::cout;
 
 int main()
 {
-	/* your answer goes here... */
+	/* Thinking of making a loop that will continously divide the inputted numbers from 1 to itself (this will be the conditional)
+		and then, I will use the comparison (kind of like from second-smallest) to keep track of the largest possible divisor so far. */
 	return 0;
 }
 
