@@ -6,7 +6,7 @@
 using std::cin;
 using std::cout;
 
-/* your answer goes here... */
+/* I believe I can use transitive properties for this. for example, I can do a = b, b = c, therefore a = c. */
 
 int main()
 {

@@ -5,7 +5,7 @@
 using std::cin;
 using std::cout;
 
-/* your answer goes here... */
+/* Will make a simple function that compares x, y, and z to find the greatest integer, then return it. */
 
 int main()
 {

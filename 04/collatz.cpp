@@ -3,7 +3,7 @@
  * Start with any (positive) integer n and then transform it as follows:
  * -- if n == 1, stop
  * -- if n is even, divide it by 2 (n --> n/2)
- * -- if n is odd, multiply b 3 and add 1 (n --> 3n+1)
+ * -- if n is odd, multiply by 3 and add 1 (n --> 3n+1)
  * Conjecture: this process always stops after a finite number of steps,
  * no matter what value of n you start with.
  *
@@ -21,7 +21,14 @@ using std::cout;
 
 int main()
 {
-	/* your answer goes here... */
+	// Should it read multiple integers or just one?
+
+	/* Can be done with a whole loop it seems like
+		1. Make an int that takes input
+		2. make a while loop that has a conditional along the lines of "while(input != 1)"
+		3. make if statements doing the calculations
+		4. make a count for each
+		5. print out count */
 	return 0;
 }
 

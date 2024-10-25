@@ -11,7 +11,7 @@
  * http://www.charlesli.org/pic10a/lectures/lecture8/index.html
  * */
 
-/* your answer goes here... */
+/* I did not understand what prototypes were based on the given links. Need to look more into it. */
 
 int main()
 {
