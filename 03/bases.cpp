@@ -11,7 +11,9 @@ using std::cout;
 
 int main()
 {
-	/* your answer goes here... */
+	/* Honestly do not have much of an idea for this one, but my thoughts are...
+		1. I would have to find a way to calculate specific numbers that make up input n
+		2. I would have to make a separate variable for the numbers I need to print out */
 	return 0;
 }
 
