@@ -11,6 +11,25 @@ int main()
 {
 	/* Thinking of making a loop that will continously divide the inputted numbers from 1 to itself (this will be the conditional)
 		and then, I will use the comparison (kind of like from second-smallest) to keep track of the largest possible divisor so far. */
+
+	int inputOne, inputTwo, gcd = 0;
+
+	cout << "Please input two integers for their GCD: " << "\n";
+	cin >> inputOne >> inputTwo;
+
+	for (int i = 1, j = 1; i <= inputOne && j <= inputTwo; i++, j++)
+	{
+		if ((inputOne % i) == 0 && (inputTwo % j) == 0)
+		{
+			if (i == j)
+			{
+				gcd = i;
+			}
+		}
+	}
+
+	cout << "The GCD is: " << gcd << "\n";
+
 	return 0;
 }
 
