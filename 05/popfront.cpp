@@ -22,30 +22,32 @@ void pop_front(vector<int>& V)
 	{
 		cin >> values;
 
-		if (values == -1)
+		if (values == -1) // Need to remember why this is better than putting cin >> values within the while loop
 		{
 			break;
 		}
 
-		V.push_back(values);
+		V.push_back(values); // Pushing input values into the front of the vector
 	}
 
 	for (int i = V.size() - 1; 0 <= i; i--) //This for loop needs to put the reverse integers into swap, then use another for loop to 
 	{
-		//cout << "Current values in vector V: " << V[i] << "\n";
-		swap.push_back(swap[i]); //This does not work because swap is still empty as of right now.
-		swap.pop_back();
+		swap.push_back(V[i]); // Putting all the contents of V into swap in reverse order
+
+		V.pop_back(); // Emptying out vector V for the future transfer... 
+						//Why doesn't this affect the for loop though? I am making v.size() smaller.
 	}
 
-	for (int k = 0; k < swap.size(); k++)
-	{
+	swap.pop_back();
 
-		cout << "Values of swap: " << swap[k] << "\n";
+	for (int k = swap.size() - 1; 0 <= k; k--)
+	{
+		V.push_back(swap[k]); // Reversing the reversal of vector swap and putting it back into the newly empty V vector
 	}
 
 	for (int j = 0; j < V.size(); j++)
 	{
-		cout << "New vector V values: " << V[j] << "\n";
+		cout << "New vector V values: " << V[j] << "\n"; // Seeing if it worked
 	}
 }
 

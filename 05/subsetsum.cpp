@@ -12,11 +12,42 @@ using std::cout;
 #include <vector>
 using std::vector;
 
-/* your answer goes here... */
+/* Make a function with return value bool, and inside the function, make a vector that takes inputs from the user, as well as another integer 
+	input that will be compared to. 
+
+	For the actual comparison, maybe make a for loop within a while loop that constantly */
+
+void vectorSum (vector<int>& V, int t)
+{
+	int input = 0;
+
+	cout << "Please input integers into the vector!" << "\n";
+	
+	while (cin >> input)
+	{
+		V.push_back(input);
+	}
+
+	for (size_t i = 0; i < V.size(); i++)
+	{
+		cout << V[i] << "\n";
+	}
+
+	cout << "Please input a number to compare to: " << "\n";
+	//cin >> t;
+
+}
 
 int main()
 {
 	/* TODO: call your function, make sure it works... */
+
+	vector<int> myVec;
+
+	int t = 0;
+
+	vectorSum(myVec, t);
+
 	return 0;
 }
 

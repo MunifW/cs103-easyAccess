@@ -1,8 +1,8 @@
-[ ] search.cpp
-[ ] divisible.cpp
-[ ] reverse.cpp
-[ ] popfront.cpp
-[ ] binarysearch.cpp
+[x] search.cpp
+[x] divisible.cpp
+[x] reverse.cpp
+[x] popfront.cpp
+[x] binarysearch.cpp
 [ ] subsetsum.cpp
 [ ] merge.cpp
 [ ] unique.cpp
