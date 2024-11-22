@@ -7,41 +7,76 @@
  * HINT: maybe think about value vs reference parameters...  */
 
 #include <iostream>
+#include <string>
+using std::string;
 using std::cin;
 using std::cout;
 #include <vector>
 using std::vector;
 
-/* Make a function with return value bool, and inside the function, make a vector that takes inputs from the user, as well as another integer 
+/* 
+Make a function with return value bool, and inside the function, make a vector that takes inputs from the user, as well as another integer 
 	input that will be compared to. 
 
-	For the actual comparison, maybe make a for loop within a while loop that constantly */
+For the actual comparison, maybe make a for loop within a while loop that constantly adds up all the contents with each other?
+*/
 
 void vectorSum (vector<int>& V, int t)
 {
+	string checker;
+
 	int input = 0;
+
+	int total = 0;
+
+	cout << "Please input a number to compare to: " << "\n";
+	cin >> t;
+
+	cout << "\n";
 
 	cout << "Please input integers into the vector!" << "\n";
 	
-	while (cin >> input)
+	while (cin >> input) // Will put user input into vector V
 	{
 		V.push_back(input);
 	}
 
-	for (size_t i = 0; i < V.size(); i++)
+	for (size_t i = 0; i < V.size(); i++) // These two for loops will add up each index value
 	{
-		cout << V[i] << "\n";
+		for (size_t j = 0; j < V.size(); j++)
+		{
+			total = V[i] + V[j];
+
+			// cout << "Current i index value: " << V[i] << "\n";
+			// cout << "Current j index value: " << V[j] << "\n";
+			// cout << "Current Total: " << total << "\n";
+				
+			if (total == t) // If the total equals t, then return checker and break.
+			{
+				checker = "True";
+
+				break;
+			}
+			else
+			{
+				checker = "False";
+			}
+		}
+
 	}
 
-	cout << "Please input a number to compare to: " << "\n";
-	//cin >> t;
+	cout << "The status of your comparison... " << checker << "\n";
 
+	/* 
+	I am too lazy to do the bonus question, but my assumption would be that I would have to print out
+		the index values that equal to t within my if statement. 
+	*/
 }
+
+
 
 int main()
 {
-	/* TODO: call your function, make sure it works... */
-
 	vector<int> myVec;
 
 	int t = 0;
