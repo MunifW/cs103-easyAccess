@@ -15,11 +15,13 @@ using std::vector;
 
 void merge(vector<int>& V1, vector<int>& V2);
 
-
+	
 /* I would probably let the user input values into two vectors, and then I would sort those two vectors...
 	Next, you make a double for loop and compare each value within the indexs of each vector. If a certain value at an index is smaller
 		than the other, then push_back into another vector.  */
 
+
+// I DID NOT MAKE AN EDGE CASE FOR EMPTY VECTORS... IDK IF I NEED TOO
 
 int main()
 {
@@ -38,6 +40,8 @@ void merge(vector<int>& V1, vector<int>& V2)
 	int values2 = 0;
 	int count = 0;
 	int temp = 0;
+
+/* User input going into the vectors: */
 
 	cout << "Please input values for the first vector! Type -1 to stop inputting values." << "\n";
 
@@ -71,7 +75,7 @@ void merge(vector<int>& V1, vector<int>& V2)
 
 	while (true)
 	{
-		for (size_t i = 0; i < V1.size() - 1; i++)
+		for (size_t i = 0; i < V1.size() - 1; i++) 
 		{
 			if (V1[i] > V1[i + 1])
 			{
@@ -82,6 +86,7 @@ void merge(vector<int>& V1, vector<int>& V2)
 				count++;
 			}
 		}
+// These for loops are essentially switching the first index with the next index depending on weather the first index is bigger or not
 
 		for (size_t j = 0; j < V2.size() - 1; j++)
 		{
@@ -106,78 +111,56 @@ void merge(vector<int>& V1, vector<int>& V2)
 
 	// Merge Vectors Below:
 
-#if 0
-	for (size_t k = 0; k < V1.size(); k++)
+
+/* I went with a while loop since using a double for loop seemed troublesome... I am essentially doing a for loop, within a while loop*/
+	size_t k = 0;
+	size_t m = 0;
+
+	while(k < V1.size() && m < V2.size())
 	{
-		for (size_t m = 0; m < V2.size(); m++)
+		if (V1[k] > V2[m])
 		{
-			if (V1[k] > V2[m])
-			{
-				V3.push_back(V2[m]);
-			}
-			else if (V2[m] > V1[k])
-			{
-				V3.push_back(V1[k]);
-			}
-			else if (V1[k] == V2[m])
-			{
-				V3.push_back(V1[k]);
-				V3.push_back(V2[m]);
-			}
+			V3.push_back(V2[m]);
+
+			m++;
+		}
+		else if (V2[m] > V1[k])
+		{
+			V3.push_back(V1[k]);
+
+			k++;
+		}
+		else if (V1[k] == V2[m])
+		{
+			V3.push_back(V1[k]);
+			V3.push_back(V2[k]);
+
+			k++;
+			m++;
 		}
 
 	}
-#endif
 
-	if (V1.size() > V2.size())
-	{
-		for (size_t k = 0; k < V1.size(); k++)
-		{
-			if (V1[k] > V2[k])
-			{
-				V3.push_back(V2[k]);
-			}
-			else if (V2[k] > V1[k])
-			{
-				V3.push_back(V1[k]);
-			}
-			else if (V1[k] == V2[k])
-			{
-				V3.push_back(V1[k]);
-				V3.push_back(V2[k]);
-			}
-		}
-	}
-	else if (V2.size() > V1.size())
-	{
-		for (size_t k = 0; k < V2.size(); k++)
-		{
-			if (V1[k] > V2[k])
-			{
-				V3.push_back(V2[k]);
-			}
-			else if (V2[k] > V1[k])
-			{
-				V3.push_back(V1[k]);
-			}
-			else if (V1[k] == V2[k])
-			{
-				V3.push_back(V1[k]);
-				V3.push_back(V2[k]);
-			}
-		}
-	}
+// After k and m are updated... depending on which vector is bigger, the remaining values for the bigger vector should be pushed into V3.
+	// k and m in the below for loops will represent any left over elements within the vectors
 
-	
+		for (k; k < V1.size(); k++)
+		{
+			V3.push_back(V1[k]);
+		}
+
+
+		for (m; m < V2.size(); m++)
+		{
+			V3.push_back(V2[m]);
+		}
+
+// Print the vector V3.
 
 	for (size_t l = 0; l < V3.size(); l++)
 	{
 		cout << "Values or vector V3: " << V3[l] << "\n";
 	}
-
-
-
-
 
 }
 
