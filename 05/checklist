@@ -3,10 +3,10 @@
 [x] reverse.cpp
 [x] popfront.cpp
 [x] binarysearch.cpp
-[ ] subsetsum.cpp
-[ ] merge.cpp
-[ ] unique.cpp
-[ ] sort.cpp
-[ ] polyeval.cpp
+[x] subsetsum.cpp
+[x] merge.cpp
+[x] unique.cpp
+[x] sort.cpp
+[ ] polyeval.cpp ???
 [ ] countbydigits.cpp
 [ ] map.cpp

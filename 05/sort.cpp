@@ -9,11 +9,54 @@ using std::cout;
 #include <vector>
 using std::vector;
 
-/* your answer goes here... */
+void sort(vector<int>& V)
+{
+	int values = 0;
+	int temp = 0;
+	int count = 0;
+
+	cout << "Please input values into your vector!" << "\n";
+
+	while (cin >> values)
+	{
+		V.push_back(values);
+	}
+
+
+	while (true)
+	{
+		for (size_t i = 0; i < V.size() - 1; i++)
+		{
+			if (V[i] > V[i + 1])
+			{
+				temp = V[i];
+				V[i] = V[i + 1];
+				V[i + 1] = temp;
+
+				count++;
+			}
+		}
+
+		if (count == 0)
+		{
+			break;
+		}
+
+		count = 0;
+	}
+
+	for (size_t j = 0; j < V.size(); j++)
+	{
+		cout << "Values for vector V: " << V[j] << "\n";
+	}
+}
 
 int main()
 {
-	/* TODO: call your function, make sure it works... */
+	vector<int> myVec;
+
+	sort(myVec);
+
 	return 0;
 }
 

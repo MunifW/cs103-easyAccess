@@ -10,11 +10,74 @@ using std::cout;
 #include <vector>
 using std::vector;
 
-/* your answer goes here... */
+void unique(vector<int>& V)
+{
+	int values = 0;
+	int temp = 0;
+	int count = 0;
+
+	cout << "Please input values into your vector!" << "\n"; 
+
+	while (cin >> values) // Putting user input into the vector
+	{
+		V.push_back(values);
+	}
+
+
+	while (true) // Sorting through the vector
+	{
+		for (size_t i = 0; i < V.size() - 1; i++)
+		{
+			if (V[i] > V[i + 1])
+			{
+				temp = V[i];
+				V[i] = V[i + 1];
+				V[i + 1] = temp;
+
+				count++;
+			}
+		}
+
+		if (count == 0)
+		{
+			break;
+		}
+
+		count = 0;
+	}
+
+	cout << "\n";
+
+// I would have to see where the vector repeats, and then move it to the front of the vector to then use pop_back (which removes the last element)
+
+	for (size_t j = 0; j < V.size(); j++)
+	{
+		if (V[j] == V[j + 1]) // If a position and the positon after it are the same, go into this statement.
+		{
+			for (size_t k = 0; k < V.size() - 1; k++) // This is not correct, but it achieves the goal...
+			{
+				temp = V[k];		// I was trying to move the repeated numbers to the end of the for loop, but they did not move correctly.
+				V[k] = V[k + 1];
+				V[k + 1] = temp;
+
+			}   
+
+			V.pop_back(); // Removes the "repeated" numbers.
+
+		}
+
+		cout << "Values of vector V: " << V[j] << "\n";
+	}
+
+
+}
 
 int main()
 {
-	/* TODO: call your function, make sure it works... */
+	vector<int> myVec;
+
+	unique(myVec);
+
 	return 0;
 }
 

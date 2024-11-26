@@ -113,6 +113,7 @@ void merge(vector<int>& V1, vector<int>& V2)
 
 
 /* I went with a while loop since using a double for loop seemed troublesome... I am essentially doing a for loop, within a while loop*/
+
 	size_t k = 0;
 	size_t m = 0;
 
@@ -144,13 +145,13 @@ void merge(vector<int>& V1, vector<int>& V2)
 // After k and m are updated... depending on which vector is bigger, the remaining values for the bigger vector should be pushed into V3.
 	// k and m in the below for loops will represent any left over elements within the vectors
 
-		for (k; k < V1.size(); k++)
+		for (; k < V1.size(); k++)
 		{
 			V3.push_back(V1[k]);
 		}
 
 
-		for (m; m < V2.size(); m++)
+		for (; m < V2.size(); m++)
 		{
 			V3.push_back(V2[m]);
 		}

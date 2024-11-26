@@ -17,7 +17,14 @@ int polyeval(const vector<int>& C, int x);
 int main()
 {
 	/* TODO: once you have written polyeval, add some test code here */
+
+	
 	return 0;
+}
+
+int polyeval(const vector<int>& C, int x)
+{
+	//AHHHHHHHHHHHHHHHHHHHHHHHHHHH
 }
 
 // vim:foldlevel=2
