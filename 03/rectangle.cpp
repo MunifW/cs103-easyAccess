@@ -51,14 +51,11 @@ int main()
 	ijjj
 	*/
 
-	for (int i = 0; i < n - 1; i++) //Controls rows
+	for (int i = 0; i <= n; i++) //Controls rows
 	{
-		for (int j = 0; j < m; j++) //Controls columns
+		for (int j = 0; j <= m; j++) //Controls columns
 		{
-			//cout << "*";
-			cout << "j";
-
-			if (i)
+			if (i == 0 || i == n || j == 0 || j == m)
 			{
 				cout << "*";
 			}
@@ -70,6 +67,11 @@ int main()
 		cout << "\n";
 	}
 
+/* Having i <= n and j <= m works, but if you did not have the less than/greater than equal sign in there, you would need to have i == n - 1 or
+	j == m - 1 within your if statement to make it work.
+	
+	This is because for loops start from 0, so your last column and last row that you'd want to target has to be one less than your input
+*/
 
 	return 0;
 }

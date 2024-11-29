@@ -13,9 +13,13 @@ using std::cin;
 using std::cout;
 
 int max(int a, int b, int c);
-void swap(int a, int b);
+void swap(int& a, int& b);
 
-int Main()
+/* To make files link and work together, prototypes of each function within your main and then you turn them
+	all into object code via "g++ -c (file name)", by the end of it you should do 
+		"g++ (all the file object codes) -o (the name you want to give it)" */
+
+int main()
 {
 	int x,y,z;
 	cin >> x >> y >> z;

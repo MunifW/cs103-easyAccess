@@ -6,14 +6,59 @@
  * then you would print "111" since 7 = 1*4 + 1*2 + 1. */
 
 #include <iostream>
+#include <string>
+using namespace std;
 using std::cin;
 using std::cout;
 
+/* This is essentially saying to divide n by the base multiple times and to get the modulo of n using the base in order to get the bases of n.*/
+
 int main()
 {
-	/* Honestly do not have much of an idea for this one, but my thoughts are...
-		1. I would have to find a way to calculate specific numbers that make up input n
-		2. I would have to make a separate variable for the numbers I need to print out */
+	int n = 0;
+	int base = 0;
+	int quotient = 0;
+	int remainder = 0;
+	string output = " ";
+
+	cout << "Please input a number for n: " << "\n";
+	cin >> n;
+
+	cout << "Please input a base: " << "\n";
+	cin >> base;
+
+	cout << "\n";
+
+	for (int i = 0; i < n; i++)
+	{
+		if (i == 0)
+		{
+			quotient = n / base;
+			remainder = n % base;
+
+			//cout << "Your output is: " << remainder << "\n";
+
+			output = to_string(remainder);
+
+			cout << output;
+		}
+
+		remainder = quotient % base;
+		quotient = quotient / base;
+
+		//cout << "Your output is: " << remainder << "\n";
+
+		output = to_string(remainder);
+
+		cout << output;
+
+		if (quotient == 0)
+		{
+			break;
+		}
+	}
+
+
 	return 0;
 }
 

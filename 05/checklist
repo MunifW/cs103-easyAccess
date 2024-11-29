@@ -1,12 +1,12 @@
 [x] search.cpp
 [x] divisible.cpp
-[x] reverse.cpp
+[x] reverse.cpp 
 [x] popfront.cpp
-[x] binarysearch.cpp
+[y] binarysearch.cpp //Did this wrong
 [x] subsetsum.cpp
 [x] merge.cpp
 [x] unique.cpp
 [x] sort.cpp
-[ ] polyeval.cpp ???
-[ ] countbydigits.cpp
-[ ] map.cpp
+[x] polyeval.cpp
+[x] countbydigits.cpp
+[y] map.cpp // Got it wrong, and it took too much time, so moved on.

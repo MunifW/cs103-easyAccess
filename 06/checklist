@@ -1,5 +1,5 @@
-[ ] palindrome.cpp
-[ ] allvowels.cpp
+[x] palindrome.cpp
+[x] allvowels.cpp
 [ ] crazycase.cpp
 [ ] find.cpp
 [ ] circular.cpp

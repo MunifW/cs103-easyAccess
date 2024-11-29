@@ -14,7 +14,7 @@ typedef void (*transformation)(int&);
 /* In case it helps, here is an example of a function of the above type: */
 void addone(int& x) { x++; }
 
-/* your answer goes here... */
+//AHHHHHHHHHHHHH
 
 /* TODO: once you have the map function written, use it to
  * 1. increment every element of a vector (you can use addone above)
@@ -24,6 +24,7 @@ void addone(int& x) { x++; }
 
 int main()
 {
+	/* After attempting and deleting code many times for this problem... I give up lol. */
 	return 0;
 }
 

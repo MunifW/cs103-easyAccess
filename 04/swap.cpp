@@ -8,9 +8,27 @@ using std::cout;
 
 /* I believe I can use transitive properties for this. for example, I can do a = b, b = c, therefore a = c. */
 
+void swap(int x, int y)
+{
+	int t; // You need a temporary placeholder variable to swap values.
+
+	t = x;
+	x = y;
+	y = t;
+
+	cout << "Your swapped x value is now: " << x << "\n";
+	cout << "Your swapped y value is now: " << y << "\n";
+}
+
 int main()
 {
 	/* TODO: write a little test here to make sure your function works. */
+	int x, y;
+	cout << "Please input integers into x and y" << "\n";
+	cin >> x >> y;
+
+	swap(x,y);
+
 	return 0;
 }
 

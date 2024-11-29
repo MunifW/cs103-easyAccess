@@ -12,19 +12,50 @@ using std::cout;
 #include <vector>
 using std::vector;
 
-int polyeval(const vector<int>& C, int x);
+int polyeval(vector<int>& C, int x);
 
 int main()
 {
-	/* TODO: once you have written polyeval, add some test code here */
+	vector<int> myVec;
+	int input = 0;
+	int output = polyeval(myVec, input);
 
-	
+	cout << "Your total is: " << output << "\n";
+
 	return 0;
 }
 
-int polyeval(const vector<int>& C, int x)
+int polyeval(vector<int>& C, int x)
 {
-	//AHHHHHHHHHHHHHHHHHHHHHHHHHHH
+	int values = 0;
+	int total = 0;
+	int currentPower = 1;
+
+	cout << "Please input coefficents into your function! Type -1 to stop." << "\n";
+
+	while (true) // Taking input from the user and putting it into the vector
+	{
+		cin >> values;
+		if (values == -1)
+			break;
+
+		C.push_back(values);
+	}
+
+	cout << "Please input a value for x!" << "\n";
+	cin >> x; // Getting value of x
+
+	for (size_t i = 0; i < C.size(); i++)
+	{
+		if (i == 0) // If i equals 0, then just add the first coeffiecent to total.
+			total += C[i];
+		else
+		{
+			currentPower *= x; // Otherwise, use the for loops index to update currentPower. Each index represents a +1 to the power of X. 
+			total += (C[i] * currentPower); // Add it to total.
+		}
+	}
+
+	return total;
 }
 
-// vim:foldlevel=2

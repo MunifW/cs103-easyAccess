@@ -18,7 +18,7 @@ int main()
 	double e = 0.6;
 	double f = 5;
 
-	if (d != e && d + f == d + f)
+	if (d != e && e + f == d + f)
 	{
 		cout << "Congrats, you found the number 5.6!" << "\n";
 	}
@@ -40,7 +40,7 @@ int main()
 	}
 #endif
 
-	/*
+	
 	cout << "e: "<< e << "\n";
 	cout << "DD: "<< dd << "\n";
 	cout << "e + f: "<< e + f << "\n";
@@ -48,7 +48,7 @@ int main()
 
 	printf("d = %.17f\n", d);
 	printf("e = %.17f\n", e);
-	*/
+	
 
 	return 0;
 }

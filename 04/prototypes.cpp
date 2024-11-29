@@ -11,11 +11,33 @@
  * http://www.charlesli.org/pic10a/lectures/lecture8/index.html
  * */
 
-/* I did not understand what prototypes were based on the given links. Need to look more into it. */
+#include <iostream>
+using std::cout;
+using std::cin; 
+
+// Prototypes are just the heading line of functions... But, how do I find an absolutely neccessary situation where one is needed?
+
+/* The true purpose of prototypes is to call a function when they are used in another function. This will make your life easier instead
+	of having to order them in the correct places.*/
+
+int add(int x, int y);
 
 int main()
 {
+	int a, b;
+
+	cin >> a >> b;
+
+	cout << "Value of z: " << add (a,b) << "\n";
+
 	return 0;
+}
+
+int add(int x, int y)
+{
+	int z = x + y;
+
+	return z;
 }
 
 // vim:foldlevel=2

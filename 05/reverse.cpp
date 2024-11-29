@@ -10,7 +10,7 @@ using std::cout;
 using std::vector;
 
 /* your answer goes here... */
-void reverse(vector<int> V)
+void reverse(vector<int>& V)
 {	
 	int values;
 	//vector<int> V;
@@ -30,6 +30,7 @@ void reverse(vector<int> V)
 		V.push_back(values);
 	}
 
+#if 0 //This works via the other method of compiling
 	for (int i = V.size() - 1; 0 <= i; i--)
 	{
 		//cout << "Values of V: " << V[i] << "\n";
@@ -43,12 +44,30 @@ void reverse(vector<int> V)
 		V.push_back(V2[j]);
 	}
 
-
 	for (int k = 0; k < V.size(); k++)
 	{
 		cout << "Values of V: " << V[k] << "\n";
 	}
+#endif
 
+//This works via makefile
+	for (size_t i = V.size(); i > 0; i--)
+	{
+		//cout << "Values of V: " << V[i] << "\n";
+
+		V2.push_back(V[i - 1]);
+		V.pop_back();
+	}
+
+	for (size_t j = 0; j < V2.size(); j++)
+	{
+		V.push_back(V2[j]);
+	}
+
+	for (size_t k = 0; k < V.size(); k++)
+	{
+		cout << "Values of V: " << V[k] << "\n";
+	}
 
 }
 
@@ -56,7 +75,7 @@ int main()
 {
 	vector<int> V;
 	reverse(V);
-	/* TODO: call your function, make sure it works... */
+
 	return 0;
 }
 

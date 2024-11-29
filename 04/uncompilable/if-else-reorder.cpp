@@ -41,6 +41,15 @@ if (C) {
 	Y();
 }
 
+/* I am not sure how else we can rearrange them? The professor already found all the different weays you can 
+	rearrange them to be honest. Some ideas I had were to combine conditions together via && or ||, but
+		that would mean that the conditions respective pieces of code would not be aligned correctly.
+	
+	ex: If we put A and B in the same else if and had B's code be put in just an else statement... it would be
+	wrong since B's code needs to be attached to B.*/
+
+
+
 /* Lastly, for concreteness, here is a situation where they can NOT be
  * arbitrarily rearranged without changing the program's behavior (assuming
  * X,Y,Z each do something different, of course): */

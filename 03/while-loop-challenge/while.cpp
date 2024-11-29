@@ -12,6 +12,8 @@
 
 /* 1. */
 
+// WTF IS THIS ASKING ME TO DO?!
+
 if (b) {
 	X;
 }

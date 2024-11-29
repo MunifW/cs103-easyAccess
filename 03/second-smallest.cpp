@@ -149,8 +149,8 @@ while (cin >> y)
             // cout << "Else-if ONE" << "\n";
         }
 
-        //cout << "Value of x: " << x << "\n";
-        //cout << "Value of z: " << z << "\n";
+        // cout << "Value of x: " << x << "\n";
+        // cout << "Value of z: " << z << "\n";
     }
 
     cout << "Smallest Value: " << x << "\n";
