@@ -27,9 +27,8 @@ void wordCount(string& input)
 
 	for (size_t i = 0; i < input.size(); i++)
 	{
-		temp++;
 
-		if ((input[i] >= 65 && input[i] <= 90) || (input[i] >= 97 && input[i] <= 122) || input[i] == 44) // This defines a word is of letters from the alphabet
+		if (input[i] >= 33 && input[i] <= 126) // This defines a word is of letters from the alphabet
 		{
 			if (input[i + 1] == ' ')
 			{
