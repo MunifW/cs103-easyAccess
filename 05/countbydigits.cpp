@@ -50,6 +50,7 @@ int main()
 		- Ex: If n = 2
 			The freq vector will make a spot at the 2nd index and will add one everytime n = 2 again.
 		*/
+	
 	}
 
 	for (size_t k = 0; k < freq.size(); k++)

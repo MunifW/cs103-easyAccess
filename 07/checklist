@@ -1,9 +1,9 @@
-[ ] resize.cpp
-[ ] insertfront.cpp
-[ ] search.cpp
-[ ] clear.cpp
-[ ] append.cpp
-[ ] remove.cpp
-[ ] reverse.cpp
-[ ] copy.cpp
-[ ] merge.cpp
+[x] resize.cpp
+[x] insertfront.cpp
+[x] search.cpp
+[x] clear.cpp
+[x] append.cpp
+[x] remove.cpp
+[x] reverse.cpp
+[x] copy.cpp
+[x] merge.cpp

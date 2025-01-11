@@ -8,25 +8,59 @@ using std::cin;
  * main() are in list-utils.h which we include here. */
 #include "list-utils.h"
 
-bool remove(node*& L, int x)
-{
-	/* TODO: write me */
-	return false; /* just so it compiles... */
+bool remove(node*& L, int x) {
+    node* p = L;       // Pointer p is initialized to the head of the list
+    node* q = NULL;    // Pointer q will keep track of the previous node
+
+    while(p && p->data != x) // Traverse the list until p is NULL or the value x is found 
+    {
+        q = p;         // Update q to the current node
+        p = p->next; 
+    }
+
+    if(p == NULL) 
+    {
+        return false;   // If p is NULL, the value x was not found in the list  
+    } 
+
+    // If the value x is found, proceed to remove the node
+    if(q) 
+    { // Check if q is not NULL, as in p is not the first node
+        q->next = p->next; // Update the previous node's next pointer to skip p
+        delete p;          // Delete current node
+    } 
+    else 
+    { // If q is NULL, the node to remove is the first node
+        L = p->next; // Update the head of the list to the next node
+        delete p;    // Delete the original head node
+    }
+
+    return true; 
 }
 
-int main()
+int main() 
 {
-	/* NOTE: some test code for you is given below.  It reads integers
-	 * from stdin and tries to remove them from a hard-coded list. */
-	node* L = buildlist({1,3,5,7,9,11,13});
-	printlist(L);
-	int x;
-	while (cin >> x) {
-		printf("%i was %sremoved\n",x,remove(L,x)?"":"not ");
-		printf("new list contains:\n");
-		printlist(L);
-	}
-	return 0;
+
+    node* L = buildlist({1, 3, 5, 7, 9, 11, 13}); 
+    printlist(L); // Print the initial list to verify its contents
+
+    int x; // Variable to hold the value to be removed
+
+    // Loop to read values from the user and attempt to remove them from the list
+    while (cin >> x) 
+    {
+        if(remove(L, x) == 0) 
+        { 
+            cout << x << " was not REMOVED after searching the linked list. \n";
+        } 
+        else if(remove(L, x) == 1) 
+        { 
+            cout << x << " was REMOVED after searching the linked list. \n";
+        }
+        printlist(L);
+    }
+
+    return 0;
 }
 
 // vim:foldlevel=2

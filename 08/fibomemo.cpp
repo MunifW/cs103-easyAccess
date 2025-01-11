@@ -14,12 +14,42 @@ using std::endl;
 #include <vector>
 using std::vector;
 
+int fib(int n)
+{
+	// These are base cases
+    vector<int> fibStorage = {1, 1};
+    // 1, 1, 2, 3, 5, 8
+
+    if (n < 0) // Edge Case
+    {
+        return 0;
+    }
+    if (n < fibStorage.size()) // Base Case
+    {
+        return fibStorage[n];
+    }
+
+
+#if 0
+    if(n == 0)
+	{
+        return 0;
+    }
+    if(n == 1)
+	{
+        return 1;
+    }
+
+    return fib(n-1) + fib(n-2); // To do the fib sequence, you have to do the last two sequences added together to get a new one.
+#endif
+
+    /* To do memoization, you would create a vector, where you would store each value in the fibo sequence */
+}
+
 int main()
 {
-	/* TODO: write some code here in main to test your function.  Be sure to
-	 * call it on inputs > 100 to check for efficiency (the naive solution would
-	 * take a very long time on n=100). */
-	return 0;
+    cout << fib(55);
+    return 0;
 }
 
 // vim:foldlevel=2

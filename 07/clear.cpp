@@ -11,26 +11,51 @@ struct node {
 	node(int d=0, node* n=NULL) : data(d), next(n) {}
 };
 
-void clear(node*& L)
+void clear(node*& L) 
 {
-	/* TODO: write me */
+    while(L) 
+    { 
+        node* p = L; 
+        
+        L = L->next; 
+        
+        delete p; // Delete the current node to free memory 
+    }
 }
 
-int main()
+int main() 
 {
-	/* NOTE: some test code for you is given below.  It just reads a list
-	 * from stdin, prints it, tries to clear it, and prints again. */
-	node* L = NULL;
-	int x;
-	while (cin >> x) L = new node(x,L);
-	node* p = L;
-	while (p) cout << p->data << " ", p = p->next;
-	cout << "\n";
-	clear(L);
-	p = L;
-	while (p) cout << p->data << " ", p = p->next;
-	cout << "\n";
-	return 0;
+    
+    node* L = NULL; 
+
+    int x; // For user input
+
+    while (cin >> x)
+    { 
+        L = new node(x, L); // Create a new node with value `x` and add it to the front of the list
+    }
+
+    
+    node* p = L; // Temp pointer `p` to traverse and print the list 
+
+    while (p) 
+    { 
+        cout << p->data << " "; // Printing out values
+        p = p->next;            
+    }
+    cout << "\n";
+
+    clear(L); // Call the `clear` function to delete the list and free memory
+
+    p = L; // Reuse `p` to verify that the list is now empty 
+
+    while (p) { 
+        cout << p->data << " "; // This loop should not run because the list is now empty
+        p = p->next; 
+    }
+    cout << "\n";
+
+    return 0;
 }
 
 // vim:foldlevel=2

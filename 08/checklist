@@ -1,7 +1,7 @@
-[ ] pow.cpp
-[ ] printvertical.cpp
-[ ] binstrings.cpp
+[x] pow.cpp
+[x] printvertical.cpp
+[x] binstrings.cpp
 [ ] powerset.cpp
 [ ] ksubsets.cpp
-[ ] fibomemo.cpp
+[x] fibomemo.cpp
 [ ] mergesort.cpp

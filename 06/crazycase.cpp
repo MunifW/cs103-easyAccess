@@ -27,11 +27,57 @@ using std::endl;
 #include <string>
 using std::string;
 
-/* your answer goes here... */
+/* I want to turn a string into a string with random capitalizaiton.
+	-> I need to use the fact that every lowercase letter is 32 away from the uppercase version of it.
+	-> I can use rand() % 2 [this will only output 0 or 1] to see if a position of the string should be chosen to be capital or not
+	-> If rand() % 2 == 0, then add 32 to the string position and output the string, else just output the string normally
+	-> I also need to make an edge case where if the string position is a period, turn it into an exclamation mark.
+	-> 
+*/
+
+void crazycase (string& input)
+{
+	int n = 0;
+
+	for (size_t i = 0; i < input.size(); i++)
+	{
+		n = rand() % 2; // n will either be 1 or 0... this will be used as a way to determine if a certain letter should be capitalized or not
+
+		if (input[i] >= 65 && input[i] <= 90) // This will see if the letters of the input are capital
+		{
+			if (n == 0) // n equaling zero is how a letter is chosen to be capitalized
+			{
+				input[i]+= 32; // A lowercase letter + 32 means it turns capital
+			}
+		}
+		else if (input[i] >= 97 && input[i] <= 122) // This will see if the letters of the input are lowercase
+		{
+			if (n == 0)
+			{
+				input[i]-= 32; // A capital letter - 32 means a lowercase letter.
+			}
+		}
+
+		if (input[i] == '.') // Periods get turned into exclamation mark
+		{
+			input[i] = '!';
+		}
+	}
+
+	cout << "Your crazycase string: " << input << "\n";
+}
 
 int main()
 {
-	/* TODO: call your function, make sure it works... */
+
+	srand(time(NULL)); // This makes rand actually raandom
+	
+	string input;
+
+	getline(cin, input);
+
+	crazycase(input);
+	
 	return 0;
 }
 

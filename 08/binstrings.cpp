@@ -20,10 +20,45 @@ using std::vector;
 #include <string>
 using std::string;
 
+vector<string> binstring(int n)
+{ 
+    // base case for my code
+    if(n == 0)
+	{
+        return {}; // we should have nothing in the string
+    }
+    if(n == 1)
+	{
+        return {"0","1"}; // the length of 1 
+    }
+
+    vector<string> smallerStr = binstring(n - 1); // get string of length n-1
+    vector<string> result; //this will hold strings of the result 
+    for(size_t i = 0; i < smallerStr.size(); i++)
+	{
+        string str = smallerStr[i]; // get  the value of each element in the recurssive call to be the value in Str
+        result.push_back("1" + str); // this is to append 0
+        result.push_back("0" + str); // this is to append 1
+    }
+
+    return result;
+    
+}
+
 int main()
 {
-	/* TODO: write some test code here */
-	return 0;
+    int n;
+    cout << "provide a num for your length {0,1}^n: ";
+    cin >> n;
+    vector<string> binstr = binstring(n);
+    
+    for(size_t i = 0; i < binstr.size(); i++)
+	{
+        cout << binstr[i] << "\n"; 
+    }
+
+
+    return 0;
 }
 
 // vim:foldlevel=2

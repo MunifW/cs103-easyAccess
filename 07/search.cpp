@@ -7,23 +7,42 @@ using std::cin;
  * main() are in list-utils.h which we include here. */
 #include "list-utils.h"
 
-bool search(node* L, int x)
+bool search(node* L, int x) 
 {
-	/* TODO: write me */
-	return false; /* just so it compiles... */
+
+    for(node* hold = L; hold != NULL; hold = hold->next) 
+    { 
+        if(hold->data == x) 
+        { // Check if the current node's data matches the target value
+            return true;
+        }
+    }
+
+    return false; // Return false if the value is not found after traversing the entire list
 }
 
-int main()
+int main() 
 {
-	/* NOTE: some test code for you is given below.  It makes a fixed
-	 * list of integers and then runs searches against that from values
-	 * given on stdin. */
-	node* L = buildlist({1,3,5,7,9,11,13});
-	printlist(L);
-	int x;
-	while (cin >> x)
-		printf("%i was %sfound\n",x,search(L,x)?"":"not ");
-	return 0;
+    // Build a fixed linked list using the helper function
+    node* L = buildlist({1, 3, 5, 7, 9, 11, 13});
+
+    // Print the linked list to verify it was built correctly
+    printlist(L);
+
+    int x; // # to look for
+
+    while(cin >> x) { 
+        if(search(L, x) == 0)
+        {   
+            cout << x << " was not found after searching the linked list. \n"; // If the value is not found in the list
+        }
+        else if(search(L, x) == 1) 
+        { 
+            cout << x << " was found after searching the linked list. \n"; // If the value is found in the list
+        }
+    }
+
+    return 0;
 }
 
 // vim:foldlevel=2

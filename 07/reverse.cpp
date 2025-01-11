@@ -8,20 +8,36 @@ using std::cin;
  * main() are in list-utils.h which we include here. */
 #include "list-utils.h"
 
-void reverse(node*& L)
+void reverse(node*& L) 
 {
-	/* TODO: write me */
+    node* prev = NULL;   // Pointer to the previous node, initially set to NULL
+    node* current = L;   // Pointer to the current node, starting at the head of the list
+    node* next = NULL;   // Pointer to the next node, used to preserve the remaining list during reversal
+
+    // Loop through the list until current becomes NULL
+    while(current != NULL) 
+    {
+        next = current->next; // Save the next node to preserve the remaining list
+
+        current->next = prev; // Reverse the next pointer of the current node to point to the previous node
+
+        prev = current;       // Move the prev pointer forward to the current node
+        current = next;       // Move the current pointer forward to the saved next node
+    }
+
+    L = prev; // Update the head of the list to the last node (stored in prev)
 }
 
-int main()
+int main() 
 {
-	/* NOTE: some test code for you is given below.  The readlist function
-	 * is defined in list-utils.h and just consumes all of stdin into a list. */
-	node* L = readlist();
-	printlist(L);
-	reverse(L);
-	printlist(L);
-	return 0;
+    node* L = readlist(); // Create a linked list by reading from input
+
+    printlist(L);  // Print the original list to verify its contents
+    reverse(L);    // Reverse the linked list using the `reverse` function
+    printlist(L);  // Print the reversed list to verify the result
+
+    return 0;
 }
+
 
 // vim:foldlevel=2

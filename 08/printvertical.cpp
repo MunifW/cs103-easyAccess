@@ -12,10 +12,25 @@ using std::cout;
 using std::cin;
 using std::endl;
 
+void vertical(int n)
+{
+    if(n < 2)
+	{  // to check if it's less than 10 letters
+        cout << n << "\n";
+    }
+    else
+	{
+        vertical(n/10); // we want to divide by 10 to help give us our first values
+
+        cout << (n%10) << "\n"; // We would then print the corresponding one
+    }
+}
+
 int main()
 {
-	/* TODO: write some code here in main to test your function. */
-	return 0;
+    vertical(1234);
+
+    return 0;
 }
 
 // vim:foldlevel=2

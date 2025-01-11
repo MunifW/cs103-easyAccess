@@ -1,7 +1,7 @@
 [x] palindrome.cpp
 [x] allvowels.cpp
-[ ] crazycase.cpp
-[ ] find.cpp
-[ ] circular.cpp
-[ ] wc.cpp
-[ ] randomperm.cpp
+[x] crazycase.cpp
+[ ] find.cpp // Don't have time to finish
+[x] circular.cpp
+[x] wc.cpp
+[x] randomperm.cpp

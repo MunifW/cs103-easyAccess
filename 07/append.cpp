@@ -10,17 +10,53 @@ using std::cout;
 using std::cin;
 #include "list-utils.h"
 
-node* append(node* L)
+node* append(node* L) 
 {
-	/* TODO: write me */
-	return NULL; /* just so it compiles... */
+    int x;  // Variable to store the value of the new node
+    cin >> x;           
+
+    node* hostage = new node(x); // Create a new node with value `x`
+
+
+    node* hold = L;  
+    while(hold->next != NULL) 
+    { 
+        hold = hold->next; // Go through the list until the end
+    }
+
+    hold->next = hostage; // Link the last node to the new node (`hostage`)
+
+    return NULL;          // Return NULL to satisfy the function signature
 }
 
-int main()
+int main() 
 {
-	/* TODO: use your function to build a list from stdin by appending
-	 * over and over. */
-	return 0;
+    node* test = new node; 
+    test->data = 3;        // Assign data to the initial node
+
+    int x; // For user input
+
+    while(cin >> x) 
+    { 
+        if (x == -1) 
+        {
+            break; // Exit the loop if -1 is entered
+        }
+
+        node* testing = new node; 
+        testing->data = x;        
+        testing->next = test;     // Point the new node to the current head of the list
+        test = testing;           // Update `test` to point to the new node (new head)
+    }
+
+    append(test); // Append a new value to the end of the list
+
+    while(test) {
+        cout << test->data << " "; // Print the data of the current node
+        test = test->next;          
+    }
+
+    return 0;
 }
 
 // vim:foldlevel=2

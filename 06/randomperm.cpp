@@ -19,11 +19,37 @@ using std::endl;
 #include <string>
 using std::string;
 
-/* your answer goes here... */
+/* Basically need to find a way to randomize indexs within the bounds of the string size */
+
+void perm(string& input)
+{
+	int randomIndex = 0;
+	int temp = 0;
+
+	for (size_t i = 0; i < input.size(); i++)
+	{
+		randomIndex = rand() % input.size(); // From discrete math, a number modulo another number should always be from (0...n-1)
+
+		temp = input[i];
+		input[i] = input[randomIndex]; // Swapping the placements of the first index with a random index 
+		input[randomIndex] = temp;
+
+	}
+
+	cout << "Your string: " << input << "\n";
+}
 
 int main()
 {
-	/* TODO: call your function, make sure it works... */
+	srand(time(NULL)); // Makes rand() truly random
+
+	string userInput;
+
+	cout << "Please input a string" << "\n"; // getting string from user
+	getline(cin, userInput);
+
+	perm(userInput);
+
 	return 0;
 }
 

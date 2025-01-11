@@ -9,6 +9,8 @@ using std::endl;
 #include <string>
 using std::string;
 
+// The code seems to break when I change the int within the for loops to size_t
+
 bool palindrome(string input)
 {
 	bool checker;
